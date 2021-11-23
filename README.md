@@ -16,4 +16,4 @@ Please check the [Circuit Diagram Folder](https://github.com/DarkerNemesis14/Obj
 
 Please check the [Arduino Code Folder](https://github.com/DarkerNemesis14/ObjectAvoidingRobot/tree/main/CircuitDiagram) for the code and its detailed documentation.
 
-### [Youtube Link: Object Avoiding Robot](https://www.youtube.com/watch?v=E0pw4mDVzcM&t=45s)
+### Youtube Link: [Object Avoiding Robot](https://www.youtube.com/watch?v=E0pw4mDVzcM&t=45s)
