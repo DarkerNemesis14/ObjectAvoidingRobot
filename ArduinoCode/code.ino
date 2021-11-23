@@ -5,12 +5,12 @@ Servo servo;
 const int servoPin = 5
 
 //Right Motor Pins
-const int in1 = 11;
-const int in2 = 10;
+const int in1 = 8;
+const int in2 = 9;
 
 //Left Motor Pins
-const int in3 = 8;
-const int in4 = 9;
+const int in3 = 10;
+const int in4 = 11;
 
 float rvel = 390.; //Angular velocity of the Car while rotating
 
