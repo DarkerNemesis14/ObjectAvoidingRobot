@@ -22,7 +22,7 @@ Please check the [Circuit Diagram Folder](https://github.com/DarkerNemesis14/Obj
 ----------------
 
 ## Arduino Code:
-Please check the [Arduino Code Folder](https://github.com/DarkerNemesis14/ObjectAvoidingRobot/tree/main/CircuitDiagram) for the code and its detailed documentation.
+Please check the [Arduino Code Folder](https://github.com/DarkerNemesis14/ObjectAvoidingRobot/tree/main/CircuitDiagram) for the code and its documentation.
 
 ----------------
 
