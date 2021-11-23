@@ -1,48 +1,74 @@
-#include<Servo.h>
+#include<Servo.h> //Servo Library
 
+//Servo Motor setups
 Servo servo;
-const int in1 = 11; //Right Motor
+const int servoPin = 5
+
+//Right Motor Pins
+const int in1 = 11;
 const int in2 = 10;
-const int in3 = 8; //Left MOtor
+
+//Left Motor Pins
+const int in3 = 8;
 const int in4 = 9;
+
 float rvel = 390.; //Angular velocity of the Car while rotating
-const int trig = 3; //Sensor
+
+//Sonar Sensor Pins
+const int trig = 3;
 const int echo = 4;
-float dis; //Distance
-float stdis = 30; //Minimum Distance to Stop
+const int vcc = 2
+
+float dis; //to store Distance from any object
+float stdis = 30; //Minimum Distance to Stop the robot
 float rdis; //Object Distance on the Right
 float ldis; //Object Distance on the Left
 
 void setup() {
-  servo.attach(5);
+  //Setting up Servo
+  servo.attach(servoPin);
   servo.write(90);
+  
+  //Setting up Motor pins
   pinMode(in1, OUTPUT);
   pinMode(in2, OUTPUT);
   pinMode(in3, OUTPUT);
   pinMode(in4, OUTPUT);
-  pinMode(2, OUTPUT); //VCC pin of the Sensor
-  digitalWrite(2, HIGH);
+  
+  //VCC pin of the Sensor
+  pinMode(vcc, OUTPUT);
+  digitalWrite(vcc, HIGH);
+  
+  //Setting up Sonar Sensor pins
   pinMode(trig, OUTPUT);
   pinMode(echo, INPUT);
 }
 
 void loop() {
+  //Moving the robot forward unless the nearest object comes closer than the minimum distance
   forward();
   dis = distance();
   while(dis > stdis){
     dis = distance();
   }
   stp();
+  
+  //Measuring the distance of the nearest object on right
   servo.write(0);
   delay(500);
   rdis = distance();
   delay(1000);
+  
+  //Measuring the distance of the nearest object on left
   servo.write(180);
   delay(500);
   ldis = distance();
   delay(1000);
+  
   servo.write(90);
   delay(500);
+  
+  //Taking decision on which direction to turn
   if (ldis<50 && rdis<50){
       reverse();
     }else{
@@ -55,14 +81,14 @@ void loop() {
    delay(500);
 }
 
-void forward(){ //Move Forward
+void forward(){ //For Moving Forward
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
   digitalWrite(in3, LOW);
   digitalWrite(in4, HIGH);
 }
 
-void right(){ //Turn Right
+void right(){ //For Turning Right
   float t;
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
@@ -73,7 +99,7 @@ void right(){ //Turn Right
   stp();
 }
 
-void left(){ //Turn Left
+void left(){ //For Turning Left
   float t;
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
@@ -84,7 +110,7 @@ void left(){ //Turn Left
   stp();
 }
 
-void reverse(){ //Turn Backward
+void reverse(){ //For Turning Backward
   float t;
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
@@ -95,14 +121,14 @@ void reverse(){ //Turn Backward
   stp();
 }
 
-void stp(){ //Stop
+void stp(){ //For Stoping
   digitalWrite(in1, LOW);
   digitalWrite(in2, LOW);
   digitalWrite(in3, LOW);
   digitalWrite(in4, LOW);
 }
 
-float distance(){ //Distance Measurement using the Sensor
+float distance(){ //For measuring Distance using the Sonar Sensor
   float dis;
   float tm;
   digitalWrite(trig, LOW);
