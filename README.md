@@ -6,7 +6,7 @@ An Arduino Uno based Project of building a robot which can detect and avoid obst
 
 ## Components Required:
 The following components are required for the project:
-1) Arduino Uno, 2) L298n Motor Driver, 3) Ultrasonic Sound Sensor, 4) 2 DC motors, 5) 1 Servo Motor, 6) 12V Power Supply.
+1) Arduino Uno, 2) L298N Motor Driver, 3) Ultrasonic Sound Sensor, 4) 2 DC motors, 5) 1 Servo Motor, 6) 12V Power Supply.
 
 ## Circuit Diagram:
 
